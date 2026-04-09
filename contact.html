@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Safa Houssein - Contact</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-link {
+            color: var(--bordeaux);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-link:hover {
+            color: var(--gold);
+            text-decoration: underline;
+        }
+        
+        .contact-info-box {
+            background: var(--blanc);
+            padding: 1.5rem;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .contact-info-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(114, 47, 55, 0.1);
+        }
+        
+        .contact-info-box h4 {
+            color: var(--bordeaux);
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-info-box p {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="54">
+    <nav class="navbar navbar-expand-lg fixed-top bg-dark navbar-dark" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top">Contact</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" type="button">
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto text-uppercase">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="merci.html">Thank You</a></li>
+                    <li class="nav-item"><a class="nav-link" href="game.html">Game</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <section id="contact" style="background-image:url('assets/img/map-image.png');">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase section-heading">Contact Me</h2>
+                    <h3 class="text-muted section-subheading">Send me a message with your CV ✦</h3>
+                </div>
+            </div>
+            
+            <!-- CONTACT FORM WITH CV -->
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <form id="contactForm" action="https://formsubmit.co/saffahousseinegeuh@email.com" method="POST" enctype="multipart/form-data">
+                        
+                        <!-- Redirect to THANK YOU PAGE (merci.html) -->
+                        <input type="hidden" name="_next" value="merci.html">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="New message from Safa's portfolio">
+                        
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!-- NAME FIELD -->
+                                <div class="mb-4 form-group">
+                                    <label for="name" class="form-label fw-bold">Your full name *</label>
+                                    <input class="form-control" type="text" id="name" name="Nom" placeholder="Jean Dupont" required>
+                                </div>
+                                
+                                <!-- EMAIL FIELD -->
+                                <div class="mb-4 form-group">
+                                    <label for="email" class="form-label fw-bold">Your email *</label>
+                                    <input class="form-control" type="email" id="email" name="Email" placeholder="jean.dupont@email.com" required>
+                                </div>
+                                
+                                <!-- UPLOAD CV (FILE) -->
+                                <div class="mb-4 form-group">
+                                    <label for="cv" class="form-label fw-bold">Your CV (PDF or DOC) *</label>
+                                    <input class="form-control" type="file" id="cv" name="CV" accept=".pdf,.doc,.docx" required>
+                                    <small class="text-muted">Accepted formats: PDF, DOC, DOCX (max. 5 MB)</small>
+                                </div>
+                                
+                                <!-- MESSAGE FIELD -->
+                                <div class="mb-4 form-group">
+                                    <label for="message" class="form-label fw-bold">Your message *</label>
+                                    <textarea class="form-control" id="message" name="Message" placeholder="Hello Safa, I would like to contact you about..." rows="5" required></textarea>
+                                </div>
+                                
+                                <!-- SEND BUTTON -->
+                                <div class="text-center">
+                                    <button class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- MY CONTACT INFORMATION (NOW CLICKABLE!) -->
+            <div class="row mt-5 pt-4">
+                <div class="col-lg-12 text-center">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="contact-info-box">
+                                <i class="fa fa-envelope fa-2x mb-3" style="color: var(--bordeaux);"></i>
+                                <h4>Email</h4>
+                                <p><a href="mailto:saffahousseinegeuh@email.com" class="contact-link">saffahousseinegeuh@email.com</a></p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="contact-info-box">
+                                <i class="fa fa-phone fa-2x mb-3" style="color: var(--bordeaux);"></i>
+                                <h4>Phone</h4>
+                                <p><a href="tel:+25377490333" class="contact-link">+253 77 49 03 33</a></p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="contact-info-box">
+                                <i class="fa fa-instagram fa-2x mb-3" style="color: var(--bordeaux);"></i>
+                                <h4>Instagram</h4>
+                                <p><a href="https://instagram.com/safabintuhoussein" target="_blank" class="contact-link">safabintuhoussein</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"><span class="copyright">© 2026 Safa Houssein</span></div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+    <script src="script.js"></script>
+    
+    <!-- CHATBOT -->
+    <div class="chatbot-container">
+        <div class="chatbot-button" onclick="toggleChatbot()">
+            <i class="fa fa-comments"></i>
+        </div>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <h4>🤖 Safa Assistant</h4>
+                <p>Ask me anything about Safa!</p>
+                <span class="close-chatbot" onclick="toggleChatbot()">✕</span>
+            </div>
+            <div class="chatbot-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-content">
+                        Hello! I'm Safa's virtual assistant. 👋<br>
+                        I know everything about her!<br>
+                        Ask me about:
+                        <br>• her skills
+                        <br>• her projects
+                        <br>• her background
+                        <br>• her contact info
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="userInput" placeholder="Ask your question..." onkeypress="if(event.key==='Enter') sendMessage()">
+                <button onclick="sendMessage()"><i class="fa fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Safa's knowledge base
+        const safaKnowledge = {
+            name: "Safa Houssein",
+            age: "Second year Computer Engineering student",
+            school: "Faculty of Engineering",
+            passion: "Digital systems, electronic circuits and technology",
+            skills: ["C", "C++", "Python", "HTML/CSS", "JavaScript", "MATLAB", "Node.js", "Bootstrap"],
+            projects: [
+                "Revision Program (C) - a study aid program",
+                "Glino Game (C++) - a game to learn programming",
+                "Python Projects - various exercises and projects",
+                "Web Portfolio - this website",
+                "MATLAB Projects - engineering simulations",
+                "Node.js App - backend development"
+            ],
+            otherInterests: "Science, medicine, culture, languages, creative drawing",
+            email: "saffahousseinegeuh@email.com",
+            phone: "+253 77 49 03 33",
+            instagram: "safabintuhussein",
+            bio: "Safa Houssein is a Computer Engineering student passionate about digital systems, circuits and technology. She also enjoys drawing and creativity."
+        };
+        
+        function toggleChatbot() {
+            const window = document.getElementById('chatbotWindow');
+            window.classList.toggle('open');
+        }
+        
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const message = input.value.trim();
+            if (message === '') return;
+            
+            addMessage(message, 'user');
+            input.value = '';
+            
+            setTimeout(() => {
+                const response = getBotResponse(message);
+                addMessage(response, 'bot');
+            }, 500);
+        }
+        
+        function addMessage(text, sender) {
+            const messagesDiv = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+            messageDiv.innerHTML = `<div class="message-content">${text}</div>`;
+            messagesDiv.appendChild(messageDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+        
+        function getBotResponse(question) {
+            const q = question.toLowerCase();
+            
+            if (q.includes('name') || q.includes('who is') || q.includes('call')) {
+                return `Her name is ${safaKnowledge.name}! 👩‍💻`;
+            }
+            
+            if (q.includes('age') || q.includes('study') || q.includes('student') || q.includes('background')) {
+                return `${safaKnowledge.name} is ${safaKnowledge.age}. ${safaKnowledge.bio}`;
+            }
+            
+            if (q.includes('skill') || q.includes('know') || q.includes('can do') || q.includes('language')) {
+                return `Safa masters: ${safaKnowledge.skills.join(', ')}. She is passionate about ${safaKnowledge.passion}. ✨`;
+            }
+            
+            if (q.includes('project') || q.includes('projects') || q.includes('work') || q.includes('made')) {
+                return `Here are Safa's projects:\n${safaKnowledge.projects.map(p => `• ${p}`).join('\n')}`;
+            }
+            
+            if (q.includes('interest') || q.includes('hobby') || q.includes('passion') || q.includes('like')) {
+                return `Safa is passionate about ${safaKnowledge.passion}. She is also interested in: ${safaKnowledge.otherInterests}. 🎨`;
+            }
+            
+            if (q.includes('contact') || q.includes('email') || q.includes('mail') || q.includes('phone') || q.includes('call')) {
+                return `You can contact Safa at:\n📧 Email: ${safaKnowledge.email}\n📱 Phone: ${safaKnowledge.phone}\n📷 Instagram: ${safaKnowledge.instagram}`;
+            }
+            
+            if (q.includes('bio') || q.includes('about') || q.includes('presentation')) {
+                return safaKnowledge.bio;
+            }
+            
+            if (q.includes('hello') || q.includes('hi') || q.includes('hey') || q.includes('bonjour')) {
+                return `Hello! I'm ${safaKnowledge.name}'s assistant. What would you like to know about her? 😊`;
+            }
+            
+            if (q.includes('thank') || q.includes('thanks')) {
+                return `You're welcome! Feel free to contact ${safaKnowledge.name} through the contact form. ✨`;
+            }
+            
+            return `I don't understand that question yet. 😅\n\nYou can ask me:\n• Who is Safa?\n• Her skills\n• Her projects\n• Her contact info\n• Her interests`;
+        }
+    </script>
+</body>
+</html>

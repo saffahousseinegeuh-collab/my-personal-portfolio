@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Safa Houssein - Skills</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="54">
+    <nav class="navbar navbar-expand-lg fixed-top bg-dark navbar-dark" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top">Skills</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" type="button">
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto text-uppercase">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="merci.html">Thank You</a></li>
+                    <li class="nav-item"><a class="nav-link" href="game.html">Game</a></li>
+                </ul>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <section id="skills">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase section-heading">Technical Skills</h2>
+                    <h3 class="text-muted section-subheading">What I've learned and mastered so far ✦</h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-code fa-stack-1x fa-inverse"></i></span>
+                    <h4 class="section-heading">Programming Languages</h4>
+                    <p class="text-muted">C, C++, Python, MATLAB</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-laptop fa-stack-1x fa-inverse"></i></span>
+                    <h4 class="section-heading">Web Technologies</h4>
+                    <p class="text-muted">HTML, CSS, JavaScript, Node.js, Bootstrap</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-paint-brush fa-stack-1x fa-inverse"></i></span>
+                    <h4 class="section-heading">Other Skills</h4>
+                    <p class="text-muted">Problem Solving, Creativity, Drawing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"><span class="copyright">© 2026 Safa Houssein</span></div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+    <script src="script.js"></script>
+      <!-- CHATBOT -->
+    <div class="chatbot-container">
+        <div class="chatbot-button" onclick="toggleChatbot()">
+            <i class="fa fa-comments"></i>
+        </div>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <h4>🤖 Safa Assistant</h4>
+                <p>Ask me anything about Safa!</p>
+                <span class="close-chatbot" onclick="toggleChatbot()">✕</span>
+            </div>
+            <div class="chatbot-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-content">
+                        Hello! I'm Safa's virtual assistant. 👋<br>
+                        I know everything about her!<br>
+                        Ask me about:
+                        <br>• her skills
+                        <br>• her projects
+                        <br>• her background
+                        <br>• her contact info
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="userInput" placeholder="Ask your question..." onkeypress="if(event.key==='Enter') sendMessage()">
+                <button onclick="sendMessage()"><i class="fa fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Safa's knowledge base
+        const safaKnowledge = {
+            name: "Safa Houssein",
+            age: "Second year Computer Engineering student",
+            school: "Faculty of Engineering",
+            passion: "Digital systems, electronic circuits and technology",
+            skills: ["C", "C++", "Python", "HTML/CSS", "JavaScript", "MATLAB", "Node.js", "Bootstrap"],
+            projects: [
+                "Revision Program (C) - a study aid program",
+                "Glino Game (C++) - a game to learn programming",
+                "Python Projects - various exercises and projects",
+                "Web Portfolio - this website",
+                "MATLAB Projects - engineering simulations",
+                "Node.js App - backend development"
+            ],
+            otherInterests: "Science, medicine, culture, languages, creative drawing",
+            email: "saffahousseinegeuh@email.com",
+            phone: "+253 77 49 03 33",
+            instagram: "safabintuhussein",
+            bio: "Safa Houssein is a Computer Engineering student passionate about digital systems, circuits and technology. She also enjoys drawing and creativity."
+        };
+        
+        function toggleChatbot() {
+            const window = document.getElementById('chatbotWindow');
+            window.classList.toggle('open');
+        }
+        
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const message = input.value.trim();
+            if (message === '') return;
+            
+            addMessage(message, 'user');
+            input.value = '';
+            
+            setTimeout(() => {
+                const response = getBotResponse(message);
+                addMessage(response, 'bot');
+            }, 500);
+        }
+        
+        function addMessage(text, sender) {
+            const messagesDiv = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+            messageDiv.innerHTML = `<div class="message-content">${text}</div>`;
+            messagesDiv.appendChild(messageDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+        
+        function getBotResponse(question) {
+            const q = question.toLowerCase();
+            
+            if (q.includes('name') || q.includes('who is') || q.includes('call')) {
+                return `Her name is ${safaKnowledge.name}! 👩‍💻`;
+            }
+            
+            if (q.includes('age') || q.includes('study') || q.includes('student') || q.includes('background')) {
+                return `${safaKnowledge.name} is ${safaKnowledge.age}. ${safaKnowledge.bio}`;
+            }
+            
+            if (q.includes('skill') || q.includes('know') || q.includes('can do') || q.includes('language')) {
+                return `Safa masters: ${safaKnowledge.skills.join(', ')}. She is passionate about ${safaKnowledge.passion}. ✨`;
+            }
+            
+            if (q.includes('project') || q.includes('projects') || q.includes('work') || q.includes('made')) {
+                return `Here are Safa's projects:\n${safaKnowledge.projects.map(p => `• ${p}`).join('\n')}`;
+            }
+            
+            if (q.includes('interest') || q.includes('hobby') || q.includes('passion') || q.includes('like')) {
+                return `Safa is passionate about ${safaKnowledge.passion}. She is also interested in: ${safaKnowledge.otherInterests}. 🎨`;
+            }
+            
+            if (q.includes('contact') || q.includes('email') || q.includes('mail') || q.includes('phone') || q.includes('call')) {
+                return `You can contact Safa at:\n📧 Email: ${safaKnowledge.email}\n📱 Phone: ${safaKnowledge.phone}\n📷 Instagram: ${safaKnowledge.instagram}`;
+            }
+            
+            if (q.includes('bio') || q.includes('about') || q.includes('presentation')) {
+                return safaKnowledge.bio;
+            }
+            
+            if (q.includes('hello') || q.includes('hi') || q.includes('hey') || q.includes('bonjour')) {
+                return `Hello! I'm ${safaKnowledge.name}'s assistant. What would you like to know about her? 😊`;
+            }
+            
+            if (q.includes('thank') || q.includes('thanks')) {
+                return `You're welcome! Feel free to contact ${safaKnowledge.name} through the contact form. ✨`;
+            }
+            
+            return `I don't understand that question yet. 😅\n\nYou can ask me:\n• Who is Safa?\n• Her skills\n• Her projects\n• Her contact info\n• Her interests`;
+        }
+    </script>
+</body>
+</html>

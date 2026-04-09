@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Thank You - Safa Houssein</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Chatbot Styles */
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .chatbot-button {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-clair));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(114, 47, 55, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .chatbot-button:hover {
+            transform: scale(1.1);
+        }
+        
+        .chatbot-button i {
+            font-size: 28px;
+            color: var(--beige);
+        }
+        
+        .chatbot-window {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 350px;
+            height: 500px;
+            background: var(--blanc);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            animation: fadeInUp 0.3s ease;
+        }
+        
+        .chatbot-window.open {
+            display: flex;
+        }
+        
+        .chatbot-header {
+            background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-clair));
+            color: var(--beige);
+            padding: 15px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .chatbot-header h4 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        
+        .chatbot-header p {
+            margin: 5px 0 0;
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+        
+        .close-chatbot {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--beige);
+        }
+        
+        .chatbot-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background: var(--beige);
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+            animation: slideIn 0.3s ease;
+        }
+        
+        .message.bot {
+            justify-content: flex-start;
+        }
+        
+        .message.user {
+            justify-content: flex-end;
+        }
+        
+        .message-content {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            font-size: 0.9rem;
+        }
+        
+        .bot .message-content {
+            background: var(--blanc);
+            color: var(--texte-fonce);
+            border-bottom-left-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .user .message-content {
+            background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-clair));
+            color: var(--beige);
+            border-bottom-right-radius: 5px;
+        }
+        
+        .chatbot-input {
+            display: flex;
+            padding: 10px;
+            background: var(--blanc);
+            border-top: 1px solid var(--beige-fonce);
+        }
+        
+        .chatbot-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid var(--beige-fonce);
+            border-radius: 25px;
+            outline: none;
+            font-size: 0.9rem;
+        }
+        
+        .chatbot-input button {
+            margin-left: 10px;
+            padding: 10px 15px;
+            background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-clair));
+            border: none;
+            border-radius: 25px;
+            color: var(--beige);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .chatbot-input button:hover {
+            transform: scale(1.05);
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 4px 15px rgba(114, 47, 55, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 25px rgba(114, 47, 55, 0.7);
+            }
+        }
+    </style>
+</head>
+
+<body id="page-top">
+    <nav class="navbar navbar-expand-lg fixed-top bg-dark navbar-dark" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top">Safa</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" type="button">
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto text-uppercase">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="merci.html">Thank You</a></li>
+                    <li class="nav-item"><a class="nav-link" href="game.html">Game</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="merci-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="merci-box">
+                        <span class="star-deco-merci">✦</span>
+                        <span class="star-deco-merci star2">✧</span>
+                        <span class="star-deco-merci star3">★</span>
+                        
+                        <div class="merci-icon">
+                            <i class="fa fa-heart"></i>
+                        </div>
+                        
+                        <h1 class="merci-title">Thank You So Much!</h1>
+                        
+                        <p class="merci-message">
+                            Your message has been sent successfully.<br>
+                            I will get back to you as soon as possible.
+                        </p>
+                        
+                        <div class="merci-poeme">
+                            <p>
+                                "A word, a smile, a connection being made,<br>
+                                Your message is a sweet promise.<br>
+                                Safa thanks you with warmth,<br>
+                                See you soon, with all my heart ✦"
+                            </p>
+                        </div>
+                        
+                        <a href="index.html" class="btn btn-retour mt-4">
+                            <i class="fa fa-home"></i> Back to Home
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"><span class="copyright">© 2026 Safa Houssein</span></div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- CHATBOT -->
+    <div class="chatbot-container">
+        <div class="chatbot-button" onclick="toggleChatbot()">
+            <i class="fa fa-comments"></i>
+        </div>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <h4>🤖 Safa Assistant</h4>
+                <p>Ask me anything about Safa!</p>
+                <span class="close-chatbot" onclick="toggleChatbot()">✕</span>
+            </div>
+            <div class="chatbot-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-content">
+                        Hello! I'm Safa's virtual assistant. 👋<br>
+                        I know everything about her!<br>
+                        Ask me about:
+                        <br>• her skills
+                        <br>• her projects
+                        <br>• her background
+                        <br>• her contact info
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="userInput" placeholder="Ask your question..." onkeypress="if(event.key==='Enter') sendMessage()">
+                <button onclick="sendMessage()"><i class="fa fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+    <script src="script.js"></script>
+    
+    <script>
+        // Safa's knowledge base
+        const safaKnowledge = {
+            name: "Safa Houssein",
+            age: "Second year Computer Engineering student",
+            school: "Faculty of Engineering",
+            passion: "Digital systems, electronic circuits and technology",
+            skills: ["C", "C++", "Python", "HTML/CSS", "JavaScript", "MATLAB", "Node.js", "Bootstrap"],
+            projects: [
+                "Revision Program (C) - a study aid program",
+                "Glino Game (C++) - a game to learn programming",
+                "Python Projects - various exercises and projects",
+                "Web Portfolio - this website",
+                "MATLAB Projects - engineering simulations",
+                "Node.js App - backend development"
+            ],
+            otherInterests: "Science, medicine, culture, languages, creative drawing",
+            email: "saffahousseinegeuh@email.com",
+            phone: "+253 77 49 03 33",
+            instagram: "safabintuhussein",
+            bio: "Safa Houssein is a Computer Engineering student passionate about digital systems, circuits and technology. She also enjoys drawing and creativity."
+        };
+        
+        function toggleChatbot() {
+            const window = document.getElementById('chatbotWindow');
+            window.classList.toggle('open');
+        }
+        
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const message = input.value.trim();
+            if (message === '') return;
+            
+            // Add user message
+            addMessage(message, 'user');
+            input.value = '';
+            
+            // Generate bot response
+            setTimeout(() => {
+                const response = getBotResponse(message);
+                addMessage(response, 'bot');
+            }, 500);
+        }
+        
+        function addMessage(text, sender) {
+            const messagesDiv = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+            messageDiv.innerHTML = `<div class="message-content">${text}</div>`;
+            messagesDiv.appendChild(messageDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+        
+        function getBotResponse(question) {
+            const q = question.toLowerCase();
+            
+            // Name
+            if (q.includes('name') || q.includes('who is') || q.includes('call')) {
+                return `Her name is ${safaKnowledge.name}! 👩‍💻`;
+            }
+            
+            // Age / background
+            if (q.includes('age') || q.includes('study') || q.includes('student') || q.includes('background')) {
+                return `${safaKnowledge.name} is ${safaKnowledge.age}. ${safaKnowledge.bio}`;
+            }
+            
+            // Skills
+            if (q.includes('skill') || q.includes('know') || q.includes('can do') || q.includes('language')) {
+                return `Safa masters: ${safaKnowledge.skills.join(', ')}. She is passionate about ${safaKnowledge.passion}. ✨`;
+            }
+            
+            // Projects
+            if (q.includes('project') || q.includes('projects') || q.includes('work') || q.includes('made')) {
+                return `Here are Safa's projects:\n${safaKnowledge.projects.map(p => `• ${p}`).join('\n')}`;
+            }
+            
+            // Interests
+            if (q.includes('interest') || q.includes('hobby') || q.includes('passion') || q.includes('like')) {
+                return `Safa is passionate about ${safaKnowledge.passion}. She is also interested in: ${safaKnowledge.otherInterests}. 🎨`;
+            }
+            
+            // Contact
+            if (q.includes('contact') || q.includes('email') || q.includes('mail') || q.includes('phone') || q.includes('call')) {
+                return `You can contact Safa at:\n📧 Email: ${safaKnowledge.email}\n📱 Phone: ${safaKnowledge.phone}\n📷 Instagram: ${safaKnowledge.instagram}`;
+            }
+            
+            // Bio
+            if (q.includes('bio') || q.includes('about') || q.includes('presentation')) {
+                return safaKnowledge.bio;
+            }
+            
+            // Greetings
+            if (q.includes('hello') || q.includes('hi') || q.includes('hey') || q.includes('bonjour')) {
+                return `Hello! I'm ${safaKnowledge.name}'s assistant. What would you like to know about her? 😊`;
+            }
+            
+            // Thanks
+            if (q.includes('thank') || q.includes('thanks')) {
+                return `You're welcome! Feel free to contact ${safaKnowledge.name} through the contact form. ✨`;
+            }
+            
+            // Default response
+            return `I don't understand that question yet. 😅\n\nYou can ask me:\n• Who is Safa?\n• Her skills\n• Her projects\n• Her contact info\n• Her interests`;
+        }
+    </script>
+</body>
+</html>

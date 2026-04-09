@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Safa Houssein - About</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Section photo de profil */
+        .profile-section {
+            padding: 120px 0 40px;
+            text-align: center;
+        }
+        
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--gold);
+            box-shadow: 0 10px 25px rgba(114, 47, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .profile-photo:hover {
+            transform: scale(1.05);
+            border-color: var(--bordeaux-clair);
+        }
+        
+        /* Cartes (carreaux) pour le parcours */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .info-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--bordeaux);
+            border-bottom: 2px solid var(--beige-fonce);
+        }
+        
+        .info-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px rgba(114, 47, 55, 0.15);
+        }
+        
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-clair));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .info-card h4 {
+            color: var(--bordeaux);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .info-card .year {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--bordeaux-fonce);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .info-card p {
+            color: var(--texte-clair);
+            line-height: 1.6;
+        }
+        
+        /* Section Langues */
+        .languages-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--beige), var(--beige-fonce));
+        }
+        
+        .language-card {
+            background: var(--blanc);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .language-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(114, 47, 55, 0.15);
+        }
+        
+        .language-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .language-card h4 {
+            color: var(--bordeaux);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .language-level {
+            font-size: 0.8rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+        
+        .language-desc {
+            font-size: 0.8rem;
+            color: var(--texte-clair);
+            margin-top: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="54">
+    <nav class="navbar navbar-expand-lg fixed-top bg-dark navbar-dark" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top">About</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" type="button">
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto text-uppercase">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="merci.html">Thank You</a></li>
+                    <li class="nav-item"><a class="nav-link" href="game.html">Game</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- SECTION PHOTO DE PROFIL -->
+    <section class="profile-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <img src="assets/img/safa6.jpeg" alt="Safa Houssein" class="profile-photo" id="profilePhoto" onerror="this.src='https://via.placeholder.com/200x200/722f37/white?text=Safa'">
+                    <h2 class="text-uppercase mt-4" style="color: var(--bordeaux);">Safa Houssein</h2>
+                    <p class="text-muted">Computer Engineering Student</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- SECTION PARCOURS EN CARTES (CARREAUX) -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase">My Journey</h2>
+                    <h3 class="text-muted section-subheading">Computer Engineering Student passionate about technology ✦</h3>
+                </div>
+            </div>
+            
+            <div class="cards-container">
+                <!-- Carte 1 -->
+                <div class="info-card">
+                    <div class="card-icon">👩‍💻</div>
+                    <span class="year">2023 - Present</span>
+                    <h4>Computer Engineering Student</h4>
+                    <p>My name is Safa Houssein and I am a Computer Engineering student. I am passionate about electrical and electronic engineering, especially digital systems, circuits and technology.</p>
+                </div>
+                
+                <!-- Carte 2 -->
+                <div class="info-card">
+                    <div class="card-icon">💻</div>
+                    <span class="year">First Year</span>
+                    <h4>Programming & Web Technologies</h4>
+                    <p>During my first year, I learned several programming languages including C, C++, and Python. I also studied HTML, CSS, MATLAB, JavaScript, and Node.js.</p>
+                </div>
+                
+                <!-- Carte 3 -->
+                <div class="info-card">
+                    <div class="card-icon">🎨</div>
+                    <span class="year">Beyond Engineering</span>
+                    <h4>Curiosity & Creativity</h4>
+                    <p>I am curious about many fields such as science, medicine, culture and languages. I also enjoy creative activities like drawing, which helps me express ideas visually.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- SECTION LANGUES -->
+    <section class="languages-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase section-heading">🌍 Languages I Speak</h2>
+                    <h3 class="text-muted section-subheading">Communication is key in engineering ✦</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 col-sm-4 col-6">
+                    <div class="language-card">
+                        <div class="language-icon">🇬🇧</div>
+                        <h4>English</h4>
+                        <div class="language-level">★★★★★</div>
+                        <div class="language-desc">Fluent / Advanced</div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4 col-6">
+                    <div class="language-card">
+                        <div class="language-icon">🇫🇷</div>
+                        <h4>French</h4>
+                        <div class="language-level">★★★★★</div>
+                        <div class="language-desc">Fluent / Native</div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4 col-6">
+                    <div class="language-card">
+                        <div class="language-icon">🇸🇴</div>
+                        <h4>Somali</h4>
+                        <div class="language-level">★★★★★</div>
+                        <div class="language-desc">Native</div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4 col-6">
+                    <div class="language-card">
+                        <div class="language-icon">🇸🇦</div>
+                        <h4>Arabic</h4>
+                        <div class="language-level">★★★★☆</div>
+                        <div class="language-desc">Advanced</div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4 col-6">
+                    <div class="language-card">
+                        <div class="language-icon">🇪🇸</div>
+                        <h4>Spanish</h4>
+                        <div class="language-level">★★★☆☆</div>
+                        <div class="language-desc">Intermediate</div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4 col-6">
+                    <div class="language-card">
+                        <div class="language-icon">🇯🇵</div>
+                        <h4>Japanese</h4>
+                        <div class="language-level">★★☆☆☆</div>
+                        <div class="language-desc">Beginner</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"><span class="copyright">© 2026 Safa Houssein</span></div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

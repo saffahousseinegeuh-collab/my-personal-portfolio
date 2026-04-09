@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Safa Houssein - Quiz Game</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .quiz-container {
+            max-width: 600px;
+            margin: 100px auto 60px;
+            background: white;
+            border-radius: 30px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(114, 47, 55, 0.2);
+            text-align: center;
+        }
+        
+        .quiz-question {
+            font-size: 1.5rem;
+            color: var(--bordeaux);
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .quiz-option {
+            background: var(--beige);
+            padding: 15px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .quiz-option:hover {
+            background: var(--bordeaux);
+            color: white;
+            transform: translateX(10px);
+        }
+        
+        .quiz-option.correct {
+            background: #2e7d32;
+            color: white;
+        }
+        
+        .quiz-option.wrong {
+            background: #c62828;
+            color: white;
+        }
+        
+        .quiz-feedback {
+            font-size: 1.1rem;
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 15px;
+        }
+        
+        .quiz-feedback.correct {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+        
+        .quiz-feedback.wrong {
+            background: #ffcdd2;
+            color: #c62828;
+        }
+        
+        .quiz-score {
+            font-size: 1.2rem;
+            color: var(--bordeaux);
+            margin-bottom: 20px;
+        }
+        
+        .next-btn, .restart-btn {
+            background: var(--bordeaux);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .next-btn:hover, .restart-btn:hover {
+            background: var(--bordeaux-clair);
+            transform: scale(1.05);
+        }
+        
+        .result-box {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .result-score {
+            font-size: 3rem;
+            color: var(--gold);
+            font-weight: bold;
+        }
+        
+        .game-title {
+            font-family: "Kaushan Script", cursive;
+            font-size: 2.5rem;
+            color: var(--bordeaux);
+        }
+        
+        @media (max-width: 768px) {
+            .quiz-container {
+                margin: 80px 20px 40px;
+                padding: 20px;
+            }
+            .quiz-question {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body id="page-top">
+    <nav class="navbar navbar-expand-lg fixed-top bg-dark navbar-dark" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top">Quiz Game</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" type="button">
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto text-uppercase">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="merci.html">Thank You</a></li>
+                    <li class="nav-item"><a class="nav-link" href="game.html">Game</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="quiz-container" id="quizContainer">
+        <h1 class="game-title">🎮 How well do you know Safa?</h1>
+        <p class="text-muted">Test your knowledge about me!</p>
+        
+        <div id="quizArea">
+            <!-- Quiz will appear here -->
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"><span class="copyright">© 2026 Safa Houssein</span></div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+    <script src="script.js"></script>
+    
+    <script>
+        // Quiz questions about Safa
+        const quizData = [
+            {
+                question: "What is my full name?",
+                options: ["Safa Ahmed", "Safa Houssein", "Safa Ali", "Safa Omar"],
+                correct: 1
+            },
+            {
+                question: "What am I studying?",
+                options: ["Medicine", "Law", "Computer Engineering", "Architecture"],
+                correct: 2
+            },
+            {
+                question: "How many languages do I speak (including basics)?",
+                options: ["2", "4", "6", "8"],
+                correct: 2
+            },
+            {
+                question: "Which programming language did I use for the Glino game?",
+                options: ["Python", "Java", "C++", "JavaScript"],
+                correct: 2
+            },
+            {
+                question: "What is my passion besides engineering?",
+                options: ["Drawing", "Singing", "Sports", "Cooking"],
+                correct: 0
+            },
+            {
+                question: "How many projects are in my portfolio?",
+                options: ["3", "4", "5", "6"],
+                correct: 3
+            },
+            {
+                question: "What is my favorite field in engineering?",
+                options: ["Civil", "Digital systems & circuits", "Mechanical", "Chemical"],
+                correct: 1
+            }
+        ];
+        
+        let currentQuestion = 0;
+        let score = 0;
+        let answered = false;
+        let selectedOption = null;
+        
+        function loadQuestion() {
+            const quizArea = document.getElementById('quizArea');
+            const q = quizData[currentQuestion];
+            
+            let html = `
+                <div class="quiz-question">${currentQuestion + 1}/${quizData.length} - ${q.question}</div>
+                <div class="quiz-options" id="quizOptions">
+            `;
+            
+            q.options.forEach((opt, index) => {
+                html += `<div class="quiz-option" onclick="checkAnswer(${index})">${opt}</div>`;
+            });
+            
+            html += `
+                </div>
+                <div class="quiz-score">Score: ${score}/${quizData.length}</div>
+                <div id="feedback"></div>
+            `;
+            
+            quizArea.innerHTML = html;
+            answered = false;
+            selectedOption = null;
+        }
+        
+        function checkAnswer(selected) {
+            if (answered) return;
+            
+            const q = quizData[currentQuestion];
+            const isCorrect = (selected === q.correct);
+            const options = document.querySelectorAll('.quiz-option');
+            const feedbackDiv = document.getElementById('feedback');
+            
+            answered = true;
+            selectedOption = selected;
+            
+            // Highlight correct and wrong answers
+            options.forEach((opt, idx) => {
+                if (idx === q.correct) {
+                    opt.classList.add('correct');
+                }
+                if (idx === selected && idx !== q.correct) {
+                    opt.classList.add('wrong');
+                }
+            });
+            
+            if (isCorrect) {
+                score++;
+                feedbackDiv.innerHTML = `<div class="quiz-feedback correct">✅ Correct! Well done!</div>`;
+            } else {
+                feedbackDiv.innerHTML = `<div class="quiz-feedback wrong">❌ Wrong! The correct answer is: ${q.options[q.correct]}</div>`;
+            }
+            
+            // Update score display
+            document.querySelector('.quiz-score').innerHTML = `Score: ${score}/${quizData.length}`;
+            
+            // Add next button
+            if (currentQuestion + 1 < quizData.length) {
+                feedbackDiv.innerHTML += `<button class="next-btn mt-3" onclick="nextQuestion()">Next Question →</button>`;
+            } else {
+                feedbackDiv.innerHTML += `<button class="restart-btn mt-3" onclick="showResults()">Show Results 🎉</button>`;
+            }
+        }
+        
+        function nextQuestion() {
+            currentQuestion++;
+            loadQuestion();
+        }
+        
+        function showResults() {
+            const quizArea = document.getElementById('quizArea');
+            const percentage = (score / quizData.length) * 100;
+            let message = "";
+            
+            if (percentage === 100) {
+                message = "🌟 Perfect! You know me very well! 🌟";
+            } else if (percentage >= 70) {
+                message = "🎉 Great job! You know a lot about me! 🎉";
+            } else if (percentage >= 50) {
+                message = "👍 Not bad! You can learn more about me on this site! 👍";
+            } else {
+                message = "😊 Thanks for playing! Browse my portfolio to learn more about me! 😊";
+            }
+            
+            quizArea.innerHTML = `
+                <div class="result-box">
+                    <div class="icon" style="font-size: 4rem;">🏆</div>
+                    <div class="result-score">${score}/${quizData.length}</div>
+                    <div class="quiz-question" style="font-size: 1.2rem;">${message}</div>
+                    <button class="restart-btn mt-4" onclick="restartQuiz()">Play Again 🔄</button>
+                    <a href="index.html" class="restart-btn mt-3" style="display: inline-block; text-decoration: none; margin-left: 10px;">🏠 Back to Home</a>
+                </div>
+            `;
+        }
+        
+        function restartQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            answered = false;
+            loadQuestion();
+        }
+        
+        // Start the quiz
+        loadQuestion();
+    </script>
+</body>
+</html>
