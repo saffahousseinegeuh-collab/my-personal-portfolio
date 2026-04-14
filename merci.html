@@ -5,12 +5,166 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Thank You - Safa Houssein</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script&amp;display=swap">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
+        /* ===== STYLES GÉNÉRAUX ===== */
+        :root {
+            --bordeaux: #722f37;
+            --bordeaux-clair: #8b3a3f;
+            --bordeaux-fonce: #3d1a1f;
+            --beige: #f5f0e8;
+            --beige-fonce: #e8dcca;
+            --beige-sombre: #d4c5b5;
+            --gold: #c9a96e;
+            --texte-fonce: #2c2c2c;
+            --texte-clair: #6b5b4f;
+            --blanc: #ffffff;
+        }
+        
+        /* Merci section */
+        .merci-section {
+            padding: 150px 0 80px;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--beige), var(--beige-fonce));
+        }
+        
+        .merci-box {
+            background: var(--blanc);
+            padding: 3rem;
+            border-radius: 40px;
+            box-shadow: 0 25px 50px rgba(114, 47, 55, 0.15);
+            position: relative;
+        }
+        
+        .star-deco-merci {
+            position: absolute;
+            font-size: 2rem;
+            color: var(--gold);
+            opacity: 0.6;
+            animation: floatStar 4s ease-in-out infinite;
+        }
+        
+        .star-deco-merci:first-child {
+            top: -20px;
+            left: 20px;
+        }
+        
+        .star2 {
+            top: 30px;
+            right: 30px;
+            animation-delay: 1s;
+        }
+        
+        .star3 {
+            bottom: -15px;
+            left: 50%;
+            animation-delay: 2s;
+        }
+        
+        .merci-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-clair));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .merci-icon .fa-heart {
+            font-size: 2.5rem;
+            color: var(--beige);
+        }
+        
+        .merci-title {
+            font-size: 2.5rem;
+            color: var(--bordeaux);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-family: "Kaushan Script", cursive;
+        }
+        
+        .merci-message {
+            font-size: 1.2rem;
+            color: var(--texte-clair);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .merci-poeme {
+            background: var(--beige);
+            padding: 1.5rem;
+            border-radius: 20px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--bordeaux);
+        }
+        
+        .merci-poeme p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--bordeaux-fonce);
+            font-style: italic;
+            margin-bottom: 0;
+            font-family: 'Georgia', serif;
+        }
+        
+        .btn-retour {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-clair));
+            color: var(--beige);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .btn-retour:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(114, 47, 55, 0.3);
+            color: var(--beige);
+            background: linear-gradient(135deg, var(--bordeaux-clair), var(--gold));
+        }
+        
+        .btn-retour i {
+            margin-right: 8px;
+        }
+        
+        footer {
+            background: var(--beige);
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .social-buttons li a {
+            background: var(--bordeaux);
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            line-height: 40px;
+        }
+        
+        @keyframes floatStar {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
         /* Chatbot Styles */
         .chatbot-container {
             position: fixed;
@@ -30,7 +184,7 @@
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(114, 47, 55, 0.4);
             transition: all 0.3s ease;
-            animation: pulse 2s infinite;
+            animation: chatbotPulse 2s infinite;
         }
         
         .chatbot-button:hover {
@@ -54,7 +208,6 @@
             display: none;
             flex-direction: column;
             overflow: hidden;
-            animation: fadeInUp 0.3s ease;
         }
         
         .chatbot-window.open {
@@ -99,7 +252,6 @@
         .message {
             margin-bottom: 15px;
             display: flex;
-            animation: slideIn 0.3s ease;
         }
         
         .message.bot {
@@ -161,23 +313,37 @@
             transform: scale(1.05);
         }
         
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        @keyframes chatbotPulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(114, 47, 55, 0.4); }
+            50% { box-shadow: 0 4px 25px rgba(114, 47, 55, 0.7); }
         }
         
-        @keyframes pulse {
-            0%, 100% {
-                box-shadow: 0 4px 15px rgba(114, 47, 55, 0.4);
+        @media (max-width: 768px) {
+            .merci-section {
+                padding: 120px 20px 60px;
             }
-            50% {
-                box-shadow: 0 4px 25px rgba(114, 47, 55, 0.7);
+            .merci-box {
+                padding: 2rem;
+            }
+            .merci-title {
+                font-size: 1.8rem;
+            }
+            .merci-message {
+                font-size: 1rem;
+            }
+            .merci-icon {
+                width: 60px;
+                height: 60px;
+            }
+            .merci-icon .fa-heart {
+                font-size: 1.8rem;
+            }
+            .star-deco-merci {
+                font-size: 1.2rem;
+            }
+            .chatbot-window {
+                width: 300px;
+                height: 450px;
             }
         }
     </style>
@@ -294,8 +460,8 @@
         </div>
     </div>
     
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/script.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="script.min.js"></script>
     <script src="script.js"></script>
     
     <script>
