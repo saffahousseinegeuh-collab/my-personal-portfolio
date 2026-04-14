@@ -5,12 +5,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Safa Houssein - Quiz Game</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script&amp;display=swap">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
+        /* ===== STYLES GÉNÉRAUX ===== */
+        :root {
+            --bordeaux: #722f37;
+            --bordeaux-clair: #8b3a3f;
+            --bordeaux-fonce: #3d1a1f;
+            --beige: #f5f0e8;
+            --beige-fonce: #e8dcca;
+            --beige-sombre: #d4c5b5;
+            --gold: #c9a96e;
+            --texte-fonce: #2c2c2c;
+            --texte-clair: #6b5b4f;
+            --blanc: #ffffff;
+        }
+        
         .quiz-container {
             max-width: 600px;
             margin: 100px auto 60px;
@@ -116,6 +130,22 @@
             color: var(--bordeaux);
         }
         
+        footer {
+            background: var(--beige);
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .social-buttons li a {
+            background: var(--bordeaux);
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            line-height: 40px;
+        }
+        
         @media (max-width: 768px) {
             .quiz-container {
                 margin: 80px 20px 40px;
@@ -179,8 +209,8 @@
         </div>
     </footer>
     
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/script.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="script.min.js"></script>
     <script src="script.js"></script>
     
     <script>
