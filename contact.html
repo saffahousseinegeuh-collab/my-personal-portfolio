@@ -5,12 +5,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Safa Houssein - Contact</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script&amp;display=swap">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
+        /* ===== STYLES GÉNÉRAUX ===== */
+        :root {
+            --bordeaux: #722f37;
+            --bordeaux-clair: #8b3a3f;
+            --bordeaux-fonce: #3d1a1f;
+            --beige: #f5f0e8;
+            --beige-fonce: #e8dcca;
+            --beige-sombre: #d4c5b5;
+            --gold: #c9a96e;
+            --texte-fonce: #2c2c2c;
+            --texte-clair: #6b5b4f;
+            --blanc: #ffffff;
+        }
+        
         .contact-link {
             color: var(--bordeaux);
             text-decoration: none;
@@ -43,6 +57,161 @@
         .contact-info-box p {
             margin-bottom: 0;
         }
+        
+        footer {
+            background: var(--beige);
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .social-buttons li a {
+            background: var(--bordeaux);
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            line-height: 40px;
+        }
+        
+        /* Chatbot styles */
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .chatbot-button {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-clair));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(114, 47, 55, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .chatbot-button:hover {
+            transform: scale(1.1);
+        }
+        
+        .chatbot-button i {
+            font-size: 28px;
+            color: var(--beige);
+        }
+        
+        .chatbot-window {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 350px;
+            height: 500px;
+            background: var(--blanc);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .chatbot-window.open {
+            display: flex;
+        }
+        
+        .chatbot-header {
+            background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-clair));
+            color: var(--beige);
+            padding: 15px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .chatbot-header h4 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        
+        .close-chatbot {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        
+        .chatbot-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background: var(--beige);
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+        }
+        
+        .message.bot {
+            justify-content: flex-start;
+        }
+        
+        .message.user {
+            justify-content: flex-end;
+        }
+        
+        .message-content {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            font-size: 0.9rem;
+        }
+        
+        .bot .message-content {
+            background: var(--blanc);
+            color: var(--texte-fonce);
+            border-bottom-left-radius: 5px;
+        }
+        
+        .user .message-content {
+            background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-clair));
+            color: var(--beige);
+            border-bottom-right-radius: 5px;
+        }
+        
+        .chatbot-input {
+            display: flex;
+            padding: 10px;
+            background: var(--blanc);
+            border-top: 1px solid var(--beige-fonce);
+        }
+        
+        .chatbot-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid var(--beige-fonce);
+            border-radius: 25px;
+            outline: none;
+        }
+        
+        .chatbot-input button {
+            margin-left: 10px;
+            padding: 10px 15px;
+            background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-clair));
+            border: none;
+            border-radius: 25px;
+            color: var(--beige);
+            cursor: pointer;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(114, 47, 55, 0.4); }
+            50% { box-shadow: 0 4px 25px rgba(114, 47, 55, 0.7); }
+        }
     </style>
 </head>
 
@@ -67,7 +236,7 @@
         </div>
     </nav>
     
-    <section id="contact" style="background-image:url('assets/img/map-image.png');">
+    <section id="contact" style="background-image:url('map-image.png');">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -175,8 +344,8 @@
         </div>
     </footer>
     
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/script.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="script.min.js"></script>
     <script src="script.js"></script>
     
     <!-- CHATBOT -->
