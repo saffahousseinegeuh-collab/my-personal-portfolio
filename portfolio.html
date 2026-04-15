@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Safa Houssein – Portfolio</title>
+    <title>Safa Houssein - Portfolio</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script&amp;display=swap">
@@ -25,303 +25,217 @@
             --blanc: #ffffff;
         }
         
-        /* ===== MODE SOMBRE AVEC COULEURS BORDEAUX ET BEIGE FONCÉ ===== */
-        body.dark-mode {
-            background-color: #1a0f12;
-            color: #e8dcca;
-        }
-        
-        body.dark-mode .navbar {
-            background-color: #0d080a !important;
-        }
-        
-        body.dark-mode .bg-light {
-            background-color: #2a1a20 !important;
-        }
-        
-        body.dark-mode .portfolio-caption {
-            background: #3d2530;
-            color: #e8dcca;
-        }
-        
-        body.dark-mode .portfolio-caption h4 {
-            color: #c9a96e;
-        }
-        
-        body.dark-mode footer {
-            background-color: #0d080a;
-        }
-        
-        body.dark-mode .poeme-box {
-            background: #3d2530;
-            border: 1px solid #5e3a45;
-        }
-        
-        body.dark-mode .poeme-texte {
-            color: #e8dcca;
-        }
-        
-        body.dark-mode .contact-info-box {
-            background: #3d2530;
-        }
-        
-        body.dark-mode .chatbot-window {
-            background: #2a1a20;
-        }
-        
-        body.dark-mode .chatbot-messages {
-            background: #1a0f12;
-        }
-        
-        body.dark-mode .bot .message-content {
-            background: #3d2530;
-            color: #e8dcca;
-        }
-        
-        body.dark-mode .chatbot-header {
-            background: linear-gradient(135deg, #3d1a1f, #5e2a30);
-        }
-        
-        body.dark-mode .hobby-card {
-            background: #3d2530;
-            color: #e8dcca;
-        }
-        
-        body.dark-mode .hobby-card h4 {
-            color: #c9a96e;
-        }
-        
-        body.dark-mode .edu-content {
-            background: #3d2530;
-        }
-        
-        body.dark-mode .edu-content p {
-            color: #e8dcca;
-        }
-        
-        body.dark-mode .edu-content h4 {
-            color: #c9a96e;
-        }
-        
-        body.dark-mode .btn-primary {
-            background-color: #5e2a30 !important;
-            border-color: #5e2a30 !important;
-        }
-        
-        body.dark-mode .btn-primary:hover {
-            background-color: #7a3a42 !important;
-        }
-        
-        /* Dark Mode Toggle Button */
-        .dark-mode-toggle {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            z-index: 1000;
-            background: linear-gradient(135deg, #722f37, #8b3a3f);
-            border: none;
-            border-radius: 50px;
-            padding: 10px 18px;
-            color: #f5f0e8;
+        /* Style pour que toutes les cartes de projet aient la même hauteur */
+        .portfolio-item {
+            margin-bottom: 30px;
             cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
         }
         
-        .dark-mode-toggle:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-        
-        body.dark-mode .dark-mode-toggle {
-            background: linear-gradient(135deg, #c9a96e, #b8945a);
-            color: #1a0f12;
-        }
-        
-        /* ===== BARRE DE RECHERCHE AVEC LOUPE ===== */
-        .search-container {
-            position: relative;
-            display: inline-block;
-            margin-left: 20px;
-        }
-        
-        .search-wrapper {
-            display: flex;
-            align-items: center;
-            background: var(--beige);
-            border-radius: 50px;
-            border: 1px solid var(--gold);
-            padding: 0 5px;
-            transition: all 0.3s ease;
-        }
-        
-        .search-wrapper:focus-within {
-            border-color: var(--bordeaux);
-            box-shadow: 0 0 5px rgba(114, 47, 55, 0.3);
-        }
-        
-        .search-icon {
-            padding: 8px 5px 8px 12px;
-            color: var(--bordeaux);
-            font-size: 1rem;
-        }
-        
-        .search-input {
-            padding: 8px 12px 8px 5px;
-            border: none;
-            background: transparent;
-            color: var(--bordeaux-fonce);
-            font-size: 0.9rem;
-            width: 180px;
-            outline: none;
-        }
-        
-        .search-input:focus {
-            width: 220px;
-        }
-        
-        .search-results {
-            position: absolute;
-            top: 100%;
-            left: 0;
+        .portfolio-caption {
             background: white;
+            padding: 25px;
             border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            width: 100%;
-            z-index: 1000;
-            display: none;
-            overflow: hidden;
-            margin-top: 5px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            min-height: 200px;
+            cursor: pointer;
         }
         
-        .search-results a {
-            display: block;
-            padding: 10px 15px;
+        .portfolio-caption:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(114, 47, 55, 0.15);
+        }
+        
+        .portfolio-caption h4 {
+            color: var(--bordeaux);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .portfolio-caption p {
+            margin-bottom: 0;
+            flex-grow: 1;
+        }
+        
+        /* Style des modales */
+        .portfolio-modal .modal-content {
+            border-radius: 20px;
+            padding: 20px;
+        }
+        
+        .portfolio-modal .modal-body {
+            padding: 30px;
+        }
+        
+        .portfolio-modal h2 {
+            color: var(--bordeaux);
+            margin-bottom: 20px;
+        }
+        
+        .modal-tech-badge {
+            display: inline-block;
+            background: var(--beige-fonce);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 5px;
+            color: var(--bordeaux);
+        }
+        
+        .modal-link {
             color: var(--bordeaux);
             text-decoration: none;
-            transition: all 0.2s ease;
-            border-bottom: 1px solid var(--beige-fonce);
+            font-weight: 600;
         }
         
-        .search-results a:hover {
-            background: var(--bordeaux);
-            color: white;
-        }
-        
-        .search-results a:last-child {
-            border-bottom: none;
-        }
-        
-        body.dark-mode .search-wrapper {
-            background: #3d2530;
-            border-color: #c9a96e;
-        }
-        
-        body.dark-mode .search-icon {
-            color: #c9a96e;
-        }
-        
-        body.dark-mode .search-input {
-            color: #e8dcca;
-        }
-        
-        body.dark-mode .search-results {
-            background: #3d2530;
-        }
-        
-        body.dark-mode .search-results a {
-            color: #e8dcca;
-            border-bottom-color: #5e3a45;
-        }
-        
-        body.dark-mode .search-results a:hover {
-            background: #c9a96e;
-            color: #1a0f12;
-        }
-        
-        @media (max-width: 768px) {
-            .search-container {
-                margin-left: 0;
-                margin-top: 10px;
-                width: 100%;
-            }
-            .search-wrapper {
-                width: 100%;
-            }
-            .search-input {
-                width: 100%;
-            }
-            .search-input:focus {
-                width: 100%;
-            }
-            .search-results {
-                width: 100%;
-            }
-        }
-        
-        /* ===== STYLES POUR LE POEME ET AUTRES ===== */
-        .poeme-section {
-            padding: 60px 0;
-            background: linear-gradient(135deg, var(--beige), var(--beige-fonce));
-        }
-        
-        .poeme-box {
-            background: var(--blanc);
-            padding: 2rem;
-            border-radius: 30px;
-            box-shadow: 0 15px 35px rgba(114, 47, 55, 0.1);
-        }
-        
-        .poeme-texte {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--bordeaux-fonce);
-            font-style: italic;
-        }
-        
-        .star-deco-poeme {
-            font-size: 1.5rem;
+        .modal-link:hover {
             color: var(--gold);
         }
         
-        .btn-animated {
-            background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-clair));
-            border: none;
-            color: var(--beige);
-            padding: 1rem 2rem;
-            border-radius: 50px;
+        /* ===== STYLES CENTRES D'INTÉRÊT ===== */
+        .hobbies-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--beige), var(--beige-fonce));
+        }
+        
+        .hobby-card {
+            background: var(--blanc);
+            padding: 25px 15px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .hobby-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(114, 47, 55, 0.15);
+        }
+        
+        .hobby-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .hobby-card h4 {
+            color: var(--bordeaux);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        
+        .hobby-card p {
+            color: var(--texte-clair);
+            font-size: 0.85rem;
+            margin-bottom: 0;
+        }
+        
+        /* ===== STYLES TIMELINE FORMATION ===== */
+        .timeline-education-section {
+            padding: 80px 0;
+            background: var(--blanc);
+        }
+        
+        .education-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(135deg, var(--bordeaux), var(--gold));
+            border-radius: 3px;
+        }
+        
+        .edu-item {
+            position: relative;
+            margin-bottom: 50px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        
+        .edu-item:nth-child(odd) {
+            flex-direction: row;
+        }
+        
+        .edu-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .edu-content {
+            width: 45%;
+            background: var(--beige);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
         }
         
-        .btn-animated:hover {
-            transform: translateY(-3px);
-            background: linear-gradient(135deg, var(--gold), var(--bordeaux-clair));
-            color: var(--bordeaux-fonce);
+        .edu-content:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(114, 47, 55, 0.1);
         }
         
-        .masthead {
-            padding: 150px 0;
-            background-size: cover;
-            background-position: center;
-            text-align: center;
-            color: white;
+        .edu-year {
+            display: inline-block;
+            background: var(--bordeaux);
+            color: var(--beige);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
         }
         
-        .intro-heading {
-            font-size: 2rem !important;
-        }
-        
-        .animated-message {
-            min-height: 80px;
-        }
-        
-        .typing-text {
+        .edu-content h4 {
+            color: var(--bordeaux);
             font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        
+        .edu-content p {
+            color: var(--texte-clair);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        
+        .edu-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 16px;
+            background: var(--gold);
+            border: 3px solid var(--bordeaux);
+            border-radius: 50%;
+            top: 20px;
+        }
+        
+        footer {
+            background: var(--beige);
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .social-buttons li a {
+            background: var(--bordeaux);
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            line-height: 40px;
         }
         
         /* Chatbot styles */
@@ -386,12 +300,19 @@
             font-size: 1.1rem;
         }
         
+        .chatbot-header p {
+            margin: 5px 0 0;
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+        
         .close-chatbot {
             position: absolute;
             top: 10px;
             right: 15px;
             cursor: pointer;
             font-size: 1.2rem;
+            color: var(--beige);
         }
         
         .chatbot-messages {
@@ -425,6 +346,7 @@
             background: var(--blanc);
             color: var(--texte-fonce);
             border-bottom-left-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
         
         .user .message-content {
@@ -446,6 +368,7 @@
             border: 1px solid var(--beige-fonce);
             border-radius: 25px;
             outline: none;
+            font-size: 0.9rem;
         }
         
         .chatbot-input button {
@@ -456,6 +379,11 @@
             border-radius: 25px;
             color: var(--beige);
             cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .chatbot-input button:hover {
+            transform: scale(1.05);
         }
         
         @keyframes pulse {
@@ -463,29 +391,25 @@
             50% { box-shadow: 0 4px 25px rgba(114, 47, 55, 0.7); }
         }
         
-        footer {
-            background: var(--beige);
-            padding: 30px 0;
-            text-align: center;
-        }
-        
-        .social-buttons li a {
-            background: var(--bordeaux);
-            color: white;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: inline-block;
-            line-height: 40px;
-        }
-        
-        /* Style pour l'émoji du jeu en bordeaux */
-        .game-link {
-            color: var(--bordeaux) !important;
-        }
-        
-        .game-link:hover {
-            color: var(--gold) !important;
+        @media (max-width: 768px) {
+            .education-timeline::before {
+                left: 20px;
+            }
+            .edu-item {
+                flex-direction: column !important;
+                padding-left: 50px;
+            }
+            .edu-content {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .edu-dot {
+                left: 20px;
+            }
+            .chatbot-window {
+                width: 300px;
+                height: 450px;
+            }
         }
     </style>
 </head>
@@ -493,7 +417,7 @@
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="54">
     <nav class="navbar navbar-expand-lg fixed-top bg-dark navbar-dark" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top">Safa</a>
+            <a class="navbar-brand" href="#page-top">Portfolio</a>
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" type="button">
                 <i class="fa fa-bars"></i>
             </button>
@@ -505,59 +429,170 @@
                     <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="merci.html">Thank You</a></li>
-                    <li class="nav-item"><a class="nav-link game-link" href="game.html">🎮 Game</a></li>
+                    <li class="nav-item"><a class="nav-link" href="game.html">Game</a></li>
                 </ul>
-                <!-- BARRE DE RECHERCHE AVEC LOUPE -->
-                <div class="search-container">
-                    <div class="search-wrapper">
-                        <span class="search-icon">🔍</span>
-                        <input type="text" class="search-input" id="searchInput" placeholder="Search...">
-                    </div>
-                    <div class="search-results" id="searchResults"></div>
-                </div>
             </div>
         </div>
     </nav>
     
-    <header class="masthead" style="background-image:url('safa6.jpeg');">
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in">Welcome to my website</div>
-                
-                <div class="intro-heading text-uppercase" style="font-size: 2rem !important;">
-                    Safa Houssein
-                </div>
-                
-                <div class="animated-message mt-3">
-                    <span class="typing-text"></span>
-                </div>
-                
-                <a class="btn btn-animated btn-xl text-uppercase mt-4" role="button" href="about.html">Tell me more</a>
-            </div>
-        </div>
-    </header>
-    
-    <!-- POEM SECTION -->
-    <section class="poeme-section">
+    <!-- SECTION PROJETS -->
+    <section class="bg-light" id="portfolio">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <div class="poeme-box">
-                        <span class="star-deco-poeme">✦</span>
-                        <p class="poeme-texte">
-                             ✦In the code and circuits, I find my way,<br>
-                              Engineering calls me, that's where I believe.<br>
-                              From lines of thought to evening stars,<br>
-                              Each project builds new knowledge.✦
-                        </p>
-                        <p class="poeme-texte poeme-2">
-                              ✦Creativity dances with reason,<br>
-                              Drawing and science, one same home.<br>
-                              Safa, a dream paving her path,<br>
-                              Technology and soul, hand in hand.✦
-                        </p>
-                        <span class="star-deco-poeme">✦</span>
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase section-heading">My Projects</h2>
+                    <h3 class="text-muted section-subheading">Click on any project to see more details ✦</h3>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-6 col-md-4 portfolio-item">
+                    <div class="portfolio-caption" data-bs-toggle="modal" data-bs-target="#modalProject1">
+                        <h4>📁 Revision Program (C)</h4>
+                        <p class="text-muted">A program that helps students review lessons through summaries and exercises.</p>
                     </div>
+                </div>
+                <div class="col-sm-6 col-md-4 portfolio-item">
+                    <div class="portfolio-caption" data-bs-toggle="modal" data-bs-target="#modalProject2">
+                        <h4>🎮 Game — SHINUBO (C++)</h4>
+                        <p class="text-muted">A simple game that helped understand programming logic and basic game development.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 portfolio-item">
+                    <div class="portfolio-caption" data-bs-toggle="modal" data-bs-target="#modalProject3">
+                        <h4>🐍 Python Projects</h4>
+                        <p class="text-muted">Various exercises and projects to improve programming skills.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-6 col-md-4 portfolio-item">
+                    <div class="portfolio-caption" data-bs-toggle="modal" data-bs-target="#modalProject4">
+                        <h4>🌐 Web Portfolio</h4>
+                        <p class="text-muted">This portfolio built with HTML, CSS, Bootstrap and JavaScript.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 portfolio-item">
+                    <div class="portfolio-caption" data-bs-toggle="modal" data-bs-target="#modalProject5">
+                        <h4>📊 MATLAB Projects</h4>
+                        <p class="text-muted">Engineering simulations and data analysis using MATLAB.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 portfolio-item">
+                    <div class="portfolio-caption" data-bs-toggle="modal" data-bs-target="#modalProject6">
+                        <h4>⚡ Node.js App</h4>
+                        <p class="text-muted">Exploring backend development with Node.js and JavaScript.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION CENTRES D'INTÉRÊT VISUELLE -->
+    <section class="hobbies-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase section-heading">🎨 My Interests & Passions</h2>
+                    <h3 class="text-muted section-subheading">What inspires me beyond engineering ✦</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 col-sm-4 col-6">
+                    <div class="hobby-card">
+                        <div class="hobby-icon">✏️</div>
+                        <h4>Drawing</h4>
+                        <p>Creative expression through art</p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4 col-6">
+                    <div class="hobby-card">
+                        <div class="hobby-icon">🔬</div>
+                        <h4>Science</h4>
+                        <p>Physics, biology & innovation</p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4 col-6">
+                    <div class="hobby-card">
+                        <div class="hobby-icon">🌍</div>
+                        <h4>Languages</h4>
+                        <p>French, English, Arabic, Somali, Spanish, Japanese</p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4 col-6">
+                    <div class="hobby-card">
+                        <div class="hobby-icon">📚</div>
+                        <h4>Reading</h4>
+                        <p>Science & personal development</p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4 col-6">
+                    <div class="hobby-card">
+                        <div class="hobby-icon">🎵</div>
+                        <h4>Music</h4>
+                        <p>Relaxation & inspiration</p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4 col-6">
+                    <div class="hobby-card">
+                        <div class="hobby-icon">🧠</div>
+                        <h4>Psychology</h4>
+                        <p>Understanding human behavior</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION TIMELINE DE FORMATION DÉTAILLÉE -->
+    <section class="timeline-education-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase section-heading">📚 My Education Journey</h2>
+                    <h3 class="text-muted section-subheading">My path in computer engineering ✦</h3>
+                </div>
+            </div>
+            <div class="education-timeline">
+                <div class="edu-item">
+                    <div class="edu-content">
+                        <span class="edu-year">2022 - 2023</span>
+                        <h4>🎓 High School Diploma</h4>
+                        <p>Scientific Baccalaureate with honors. Passion for mathematics and physics.</p>
+                    </div>
+                    <div class="edu-dot"></div>
+                    <div class="edu-placeholder"></div>
+                </div>
+                
+                <div class="edu-item">
+                    <div class="edu-content">
+                        <span class="edu-year">2023 - 2024</span>
+                        <h4>📘 First Year - Computer Engineering</h4>
+                        <p>Introduction to programming: C, C++, Python. Fundamentals of algorithms and data structures.</p>
+                    </div>
+                    <div class="edu-dot"></div>
+                    <div class="edu-placeholder"></div>
+                </div>
+                
+                <div class="edu-item">
+                    <div class="edu-content">
+                        <span class="edu-year">2024 - 2025</span>
+                        <h4>💻 Second Year - Specialization</h4>
+                        <p>Web development (HTML/CSS/JS), MATLAB simulations, Node.js backend, Database management.</p>
+                    </div>
+                    <div class="edu-dot"></div>
+                    <div class="edu-placeholder"></div>
+                </div>
+                
+                <div class="edu-item">
+                    <div class="edu-content">
+                        <span class="edu-year">2025 - 2026</span>
+                        <h4>🚀 Third Year - Advanced Projects</h4>
+                        <p>Final year projects, internship preparation, advanced algorithms and system design.</p>
+                    </div>
+                    <div class="edu-dot"></div>
+                    <div class="edu-placeholder"></div>
                 </div>
             </div>
         </div>
@@ -584,161 +619,220 @@
         </div>
     </footer>
     
-    <!-- BOUTON MODE SOMBRE / CLAIR -->
-    <button class="dark-mode-toggle" onclick="toggleDarkMode()">
-        🌙 Dark Mode
-    </button>
+    <!-- MODALES PROJETS -->
+    <!-- MODAL PROJET 1 - Revision Program (C) -->
+    <div class="modal fade portfolio-modal" id="modalProject1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="text-center">
+                        <h2 class="text-uppercase">📁 Revision Program (C)</h2>
+                        <div class="mb-4">
+                            <span class="modal-tech-badge">C</span>
+                            <span class="modal-tech-badge">Algorithms</span>
+                            <span class="modal-tech-badge">File I/O</span>
+                        </div>
+                        <p class="lead">A complete study revision program developed in C language.</p>
+                        <p>This project allows students to:</p>
+                        <ul class="text-start">
+                            <li>Organize their courses by subject</li>
+                            <li>Create summaries and revision notes</li>
+                            <li>Take quizzes to test their knowledge</li>
+                            <li>Track their progress</li>
+                        </ul>
+                        <p><strong>Technologies:</strong> C Language, File Management, Data Structures</p>
+                        <a href="https://github.com/saffahousseinegeuh-collab" target="_blank" class="modal-link">🔗 View project on GitHub →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- MODAL PROJET 2 - SHINUBO Game (C++) -->
+    <div class="modal fade portfolio-modal" id="modalProject2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="text-center">
+                        <h2 class="text-uppercase">🎮 Game — SHINUBO (C++)</h2>
+                        <div class="mb-4">
+                            <span class="modal-tech-badge">C++</span>
+                            <span class="modal-tech-badge">OOP</span>
+                            <span class="modal-tech-badge">Game Logic</span>
+                        </div>
+                        <p class="lead">A simple game developed in C++ to learn programming basics.</p>
+                        <p>This project helped me understand:</p>
+                        <ul class="text-start">
+                            <li>Object-Oriented Programming</li>
+                            <li>Game logic and mechanics</li>
+                            <li>User input handling</li>
+                            <li>Game loops</li>
+                        </ul>
+                        <p><strong>Technologies:</strong> C++, Object-Oriented Programming</p>
+                        <a href="https://github.com/saffahousseinegeuh-collab/SHINOBU" target="_blank" class="modal-link">🔗 View SHINUBO on GitHub →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- MODAL PROJET 3 - Python Projects -->
+    <div class="modal fade portfolio-modal" id="modalProject3" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="text-center">
+                        <h2 class="text-uppercase">🐍 Python Projects</h2>
+                        <div class="mb-4">
+                            <span class="modal-tech-badge">Python</span>
+                            <span class="modal-tech-badge">Data Analysis</span>
+                            <span class="modal-tech-badge">Automation</span>
+                        </div>
+                        <p class="lead">A collection of Python projects to develop my skills.</p>
+                        <p>Projects include:</p>
+                        <ul class="text-start">
+                            <li>Data analysis and visualization</li>
+                            <li>Task automation scripts</li>
+                            <li>Sorting and search algorithms</li>
+                            <li>Small command-line games</li>
+                        </ul>
+                        <p><strong>Technologies:</strong> Python, Pandas, Matplotlib</p>
+                        <a href="#" class="modal-link">🔗 View projects on GitHub →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- MODAL PROJET 4 - Web Portfolio -->
+    <div class="modal fade portfolio-modal" id="modalProject4" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="text-center">
+                        <h2 class="text-uppercase">🌐 Web Portfolio</h2>
+                        <div class="mb-4">
+                            <span class="modal-tech-badge">HTML5</span>
+                            <span class="modal-tech-badge">CSS3</span>
+                            <span class="modal-tech-badge">Bootstrap</span>
+                            <span class="modal-tech-badge">JavaScript</span>
+                        </div>
+                        <p class="lead">This portfolio you are currently viewing!</p>
+                        <p>Features include:</p>
+                        <ul class="text-start">
+                            <li>Responsive design (mobile, tablet, desktop)</li>
+                            <li>Animations and visual effects</li>
+                            <li>Contact form with CV upload</li>
+                            <li>Interactive chatbot</li>
+                            <li>Smooth navigation between pages</li>
+                        </ul>
+                        <p><strong>Technologies:</strong> HTML5, CSS3, Bootstrap 5, JavaScript</p>
+                        <a href="https://github.com/saffahousseinegeuh-collab/my-personal-portfolio" target="_blank" class="modal-link">🔗 View source code on GitHub →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- MODAL PROJET 5 - MATLAB Projects -->
+    <div class="modal fade portfolio-modal" id="modalProject5" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="text-center">
+                        <h2 class="text-uppercase">📊 Discrete Math Project (MATLAB)</h2>
+                        <div class="mb-4">
+                            <span class="modal-tech-badge">MATLAB</span>
+                            <span class="modal-tech-badge">Discrete Math</span>
+                            <span class="modal-tech-badge">Simulation</span>
+                        </div>
+                        <p class="lead">A MATLAB project focused on discrete mathematics concepts and simulations.</p>
+                        <p>What I learned:</p>
+                        <ul class="text-start">
+                            <li>Set theory and logic operations</li>
+                            <li>Graph theory algorithms</li>
+                            <li>Combinatorics and probability</li>
+                            <li>Mathematical modeling in MATLAB</li>
+                        </ul>
+                        <p><strong>Technologies:</strong> MATLAB, Discrete Mathematics</p>
+                        <a href="https://github.com/saffahousseinegeuh-collab/discret_math_project" target="_blank" class="modal-link">🔗 View MATLAB project on GitHub →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- MODAL PROJET 6 - Node.js App -->
+    <div class="modal fade portfolio-modal" id="modalProject6" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="text-center">
+                        <h2 class="text-uppercase">⚡ Node.js App</h2>
+                        <div class="mb-4">
+                            <span class="modal-tech-badge">Node.js</span>
+                            <span class="modal-tech-badge">Express</span>
+                            <span class="modal-tech-badge">REST API</span>
+                        </div>
+                        <p class="lead">Exploring backend development with Node.js.</p>
+                        <p>This project allowed me to discover:</p>
+                        <ul class="text-start">
+                            <li>Creating RESTful APIs</li>
+                            <li>Route and middleware management</li>
+                            <li>Database connection</li>
+                            <li>User authentication</li>
+                        </ul>
+                        <p><strong>Technologies:</strong> Node.js, Express.js, MongoDB</p>
+                        <a href="https://github.com/saffahousseinegeuh-collab" target="_blank" class="modal-link">🔗 View project on GitHub →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- CHATBOT -->
+    <div class="chatbot-container">
+        <div class="chatbot-button" onclick="toggleChatbot()">
+            <i class="fa fa-comments"></i>
+        </div>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <h4>🤖 Safa Assistant</h4>
+                <p>Ask me anything about Safa!</p>
+                <span class="close-chatbot" onclick="toggleChatbot()">✕</span>
+            </div>
+            <div class="chatbot-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-content">
+                        Hello! I'm Safa's virtual assistant. 👋<br>
+                        I know everything about her!<br>
+                        Ask me about:
+                        <br>• her skills
+                        <br>• her projects
+                        <br>• her background
+                        <br>• her contact info
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="userInput" placeholder="Ask your question..." onkeypress="if(event.key==='Enter') sendMessage()">
+                <button onclick="sendMessage()"><i class="fa fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
     
     <script src="bootstrap.min.js"></script>
     <script src="script.min.js"></script>
     <script src="script.js"></script>
     
     <script>
-        // Animation des messages
-        document.addEventListener('DOMContentLoaded', function() {
-            const messages = [
-                "Computer Engineering Student ✦",
-                "Passionate about technology ✦",
-                "Digital systems & circuits ✦",
-                "Creative & curious ✦",
-                "Welcome to my world! ✦"
-            ];
-            
-            let messageIndex = 0;
-            const typingElement = document.querySelector('.typing-text');
-            
-            if (typingElement) {
-                function typeMessage(message, callback) {
-                    let i = 0;
-                    typingElement.textContent = '';
-                    typingElement.style.opacity = '1';
-                    
-                    function addChar() {
-                        if (i < message.length) {
-                            typingElement.textContent += message.charAt(i);
-                            i++;
-                            setTimeout(addChar, 80);
-                        } else {
-                            setTimeout(() => {
-                                eraseMessage(callback);
-                            }, 2000);
-                        }
-                    }
-                    addChar();
-                }
-                
-                function eraseMessage(callback) {
-                    let text = typingElement.textContent;
-                    let i = text.length;
-                    
-                    function removeChar() {
-                        if (i > 0) {
-                            typingElement.textContent = text.substring(0, i - 1);
-                            i--;
-                            setTimeout(removeChar, 50);
-                        } else {
-                            typingElement.style.opacity = '0';
-                            setTimeout(() => {
-                                callback();
-                            }, 300);
-                        }
-                    }
-                    removeChar();
-                }
-                
-                function cycleMessages() {
-                    typeMessage(messages[messageIndex], () => {
-                        messageIndex = (messageIndex + 1) % messages.length;
-                        cycleMessages();
-                    });
-                }
-                
-                cycleMessages();
-            }
-        });
-        
-        // Dark Mode Toggle Function
-        function toggleDarkMode() {
-            const body = document.body;
-            const button = document.querySelector('.dark-mode-toggle');
-            
-            body.classList.toggle('dark-mode');
-            
-            if (body.classList.contains('dark-mode')) {
-                button.innerHTML = '☀️ Light Mode';
-                localStorage.setItem('darkMode', 'enabled');
-            } else {
-                button.innerHTML = '🌙 Dark Mode';
-                localStorage.setItem('darkMode', 'disabled');
-            }
-        }
-        
-        // Vérifier la préférence sauvegardée
-        if (localStorage.getItem('darkMode') === 'enabled') {
-            document.body.classList.add('dark-mode');
-            const btn = document.querySelector('.dark-mode-toggle');
-            if (btn) btn.innerHTML = '☀️ Light Mode';
-        }
-        
-        // ===== BARRE DE RECHERCHE =====
-        const searchData = [
-            { name: "Home", url: "index.html", keywords: ["home", "accueil", "main", "start"] },
-            { name: "About", url: "about.html", keywords: ["about", "a propos", "bio", "qui suis-je", "parcours"] },
-            { name: "Skills", url: "skills.html", keywords: ["skills", "competences", "compétences", "technologies", "langages"] },
-            { name: "Portfolio", url: "portfolio.html", keywords: ["portfolio", "projets", "projects", "realisations", "réalisations"] },
-            { name: "Contact", url: "contact.html", keywords: ["contact", "email", "mail", "telephone", "téléphone", "me contacter"] },
-            { name: "Game", url: "game.html", keywords: ["game", "jeu", "quiz", "play", "jouer"] },
-            { name: "Thank You", url: "merci.html", keywords: ["merci", "thank", "thanks", "remerciement"] }
-        ];
-
-        const searchInput = document.getElementById('searchInput');
-        const searchResults = document.getElementById('searchResults');
-        const searchContainer = document.querySelector('.search-container');
-
-        if (searchInput && searchResults) {
-            function performSearch() {
-                const query = searchInput.value.toLowerCase().trim();
-                
-                if (query === '') {
-                    searchResults.style.display = 'none';
-                    return;
-                }
-                
-                const results = searchData.filter(page => {
-                    if (page.name.toLowerCase().includes(query)) return true;
-                    return page.keywords.some(keyword => keyword.includes(query));
-                });
-                
-                if (results.length > 0) {
-                    searchResults.innerHTML = results.map(result => 
-                        `<a href="${result.url}">🔍 ${result.name}</a>`
-                    ).join('');
-                    searchResults.style.display = 'block';
-                } else {
-                    searchResults.innerHTML = `<a href="#">❌ No result for "${query}"</a>`;
-                    searchResults.style.display = 'block';
-                }
-            }
-
-            searchInput.addEventListener('input', performSearch);
-
-            document.addEventListener('click', function(e) {
-                if (searchContainer && !searchContainer.contains(e.target)) {
-                    searchResults.style.display = 'none';
-                }
-            });
-
-            searchInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    const firstResult = searchResults.querySelector('a');
-                    if (firstResult && firstResult.href) {
-                        window.location.href = firstResult.href;
-                    }
-                }
-            });
-        }
-        
-        // Chatbot functions
+        // Safa's knowledge base
         const safaKnowledge = {
             name: "Safa Houssein",
             age: "Second year Computer Engineering student",
@@ -747,10 +841,10 @@
             skills: ["C", "C++", "Python", "HTML/CSS", "JavaScript", "MATLAB", "Node.js", "Bootstrap"],
             projects: [
                 "Revision Program (C) - a study aid program",
-                "Glino Game (C++) - a game to learn programming",
+                "SHINUBO Game (C++) - a game to learn programming",
                 "Python Projects - various exercises and projects",
                 "Web Portfolio - this website",
-                "MATLAB Projects - engineering simulations",
+                "MATLAB Discrete Math Project - mathematical simulations",
                 "Node.js App - backend development"
             ],
             otherInterests: "Science, medicine, culture, languages, creative drawing",
@@ -762,7 +856,7 @@
         
         function toggleChatbot() {
             const window = document.getElementById('chatbotWindow');
-            if (window) window.classList.toggle('open');
+            window.classList.toggle('open');
         }
         
         function sendMessage() {
@@ -781,7 +875,6 @@
         
         function addMessage(text, sender) {
             const messagesDiv = document.getElementById('chatMessages');
-            if (!messagesDiv) return;
             const messageDiv = document.createElement('div');
             messageDiv.className = `message ${sender}`;
             messageDiv.innerHTML = `<div class="message-content">${text}</div>`;
@@ -831,37 +924,5 @@
             return `I don't understand that question yet. 😅\n\nYou can ask me:\n• Who is Safa?\n• Her skills\n• Her projects\n• Her contact info\n• Her interests`;
         }
     </script>
-    
-    <!-- CHATBOT -->
-    <div class="chatbot-container">
-        <div class="chatbot-button" onclick="toggleChatbot()">
-            <i class="fa fa-comments"></i>
-        </div>
-        <div class="chatbot-window" id="chatbotWindow">
-            <div class="chatbot-header">
-                <h4>🤖 Safa Assistant</h4>
-                <p>Ask me anything about Safa!</p>
-                <span class="close-chatbot" onclick="toggleChatbot()">✕</span>
-            </div>
-            <div class="chatbot-messages" id="chatMessages">
-                <div class="message bot">
-                    <div class="message-content">
-                        Hello! I'm Safa's virtual assistant. 👋<br>
-                        I know everything about her!<br>
-                        Ask me about:
-                        <br>• her skills
-                        <br>• her projects
-                        <br>• her background
-                        <br>• her contact info
-                    </div>
-                </div>
-            </div>
-            <div class="chatbot-input">
-                <input type="text" id="userInput" placeholder="Ask your question..." onkeypress="if(event.key==='Enter') sendMessage()">
-                <button onclick="sendMessage()"><i class="fa fa-paper-plane"></i></button>
-            </div>
-        </div>
-    </div>
-    
 </body>
 </html>
